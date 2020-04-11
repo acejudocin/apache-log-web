@@ -1,0 +1,4 @@
+<div *ngIf="!dataLoaded">Cargando...</div>
+<div *ngIf="dataLoaded">
+    <app-pie [data]="browserData"></app-pie>
+</div>
