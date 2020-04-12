@@ -1,4 +1,10 @@
 <div *ngIf="!dataLoaded">Cargando...</div>
 <div *ngIf="dataLoaded">
+    <div>General info:
+        Total traffic: {{generalInfo.totalTraffic/1024/1024 | number}}MB
+        Unique visitors: {{generalInfo.distinctVisitors}}
+        Total requests: {{generalInfo.totalRequests}}
+        Requests per visitor: {{generalInfo.totalRequests/generalInfo.distinctVisitors | number}}
+    </div>
     <app-pie [data]="browserData"></app-pie>
 </div>

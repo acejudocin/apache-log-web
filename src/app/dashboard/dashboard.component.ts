@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
 
   browserData: any;
   dataLoaded: boolean;
+  generalInfo = new Object();
 
   constructor(private apacheStatsService: ApiApacheStatsService) { }
 
@@ -20,6 +21,12 @@ export class DashboardComponent implements OnInit {
         this.dataLoaded = true;
       }
     );
+
+    await this.apacheStatsService.getGeneralInfo().toPromise().then(
+      data => this.generalInfo = data,
+      error => console.log(error)
+    );
+    
   }
 
 }

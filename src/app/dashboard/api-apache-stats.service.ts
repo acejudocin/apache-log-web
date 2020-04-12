@@ -14,4 +14,8 @@ export class ApiApacheStatsService {
   getBrowserStats() {
     return this.http.get<any>(`${this.apiApacheStatsUrl}/statistics/browsers`);
   }
+
+  getGeneralInfo() {
+    return this.http.get<any>(`${this.apiApacheStatsUrl}/statistics/generalinfo`);
+  }
 }
